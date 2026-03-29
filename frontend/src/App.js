@@ -1,3 +1,4 @@
+
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import GenreList from './components/Genre/GenreList';
 import DirectorList from './components/Director/DirectorList';
@@ -5,6 +6,9 @@ import ProductoraList from './components/Productora/ProductoraList';
 import TipoList from './components/Tipo/TipoList';
 import MediaList from './components/Media/MediaList';
 import './App.css';
+
+// URL del backend en producción
+const API_URL = "https://tu-backend.onrender.com";
 
 function App() {
   return (
@@ -23,11 +27,11 @@ function App() {
 
         <main>
           <Routes>
-            <Route path="/genres" element={<GenreList />} />
-            <Route path="/directors" element={<DirectorList />} />
-            <Route path="/productoras" element={<ProductoraList />} />
-            <Route path="/tipos" element={<TipoList />} />
-            <Route path="/media" element={<MediaList />} />
+            <Route path="/genres" element={<GenreList apiUrl={API_URL} />} />
+            <Route path="/directors" element={<DirectorList apiUrl={API_URL} />} />
+            <Route path="/productoras" element={<ProductoraList apiUrl={API_URL} />} />
+            <Route path="/tipos" element={<TipoList apiUrl={API_URL} />} />
+            <Route path="/media" element={<MediaList apiUrl={API_URL} />} />
           </Routes>
         </main>
       </div>
